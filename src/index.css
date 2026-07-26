@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+::selection {
+  background-color: #D6F24C;
+  color: #14213D;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #14213D;
+  outline-offset: 3px;
+}
+
+mark.marker {
+  background-color: transparent;
+  background-image: linear-gradient(120deg, #D6F24C 0%, #D6F24C 100%);
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 0% 55%;
+  color: inherit;
+  padding: 0 2px;
+  animation: highlight 0.9s 0.3s ease-out forwards;
+}
+
+mark.marker.pink {
+  background-image: linear-gradient(120deg, #FF6F91 0%, #FF6F91 100%);
+}
+
+.section-label {
+  @apply font-mono text-xs uppercase tracking-[0.2em] text-ink/50;
+}
+
+.card-tilt {
+  transition: transform 0.25s ease;
+}
+.card-tilt:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.01);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
